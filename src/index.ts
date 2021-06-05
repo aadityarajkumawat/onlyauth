@@ -7,7 +7,6 @@ import Resolvers from './resolvers';
 import { PrismaClient } from '@prisma/client';
 import { contextBuilder } from './helpers/contextBuilder';
 
-console.log(process.env.DATABASE_URL);
 async function main() {
     const typeDefs = path.join(__dirname, 'graphql/typeDefs.graphql');
     const resolvers: ResolversI = Resolvers;

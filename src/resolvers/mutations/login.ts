@@ -6,12 +6,6 @@ export async function login(
     args: LoginInput,
     { request, prisma }: ResolverContext
 ): Promise<UserResponse> {
-    const userId = request.session.userId;
-    if (userId) {
-        const user = await prisma.user.findFirst({ where: { id: userId } });
-        return { error: null, user };
-    }
-
     try {
         const user = await prisma.user.findFirst({ where: { ...args } });
         if (!user) return { error: 'User does not exist', user: null };
