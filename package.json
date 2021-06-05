@@ -1,0 +1,32 @@
+{
+    "name": "onlyauth",
+    "version": "1.0.0",
+    "description": "An authentication API in GraphQL and PostgreSQL",
+    "main": "index.js",
+    "scripts": {
+        "watch": "tsc -w",
+        "build": "tsc",
+        "dev": "nodemon dist/index",
+        "start": "node dist/index",
+        "dd": "sleep 3s && npx prisma migrate deploy && npx prisma generate && yarn start"
+    },
+    "author": "Aditya Raj Kumawat",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/connect-redis": "^0.0.16",
+        "@types/node": "^15.12.0",
+        "@types/ws": "^7.4.4",
+        "nodemon": "^2.0.7",
+        "typescript": "^4.3.2"
+    },
+    "dependencies": {
+        "@prisma/client": "^2.24.1",
+        "connect-redis": "^6.0.0",
+        "dotenv": "^10.0.0",
+        "dotenv-safe": "^8.2.0",
+        "express-session": "^1.17.2",
+        "graphql-yoga": "^1.18.3",
+        "prisma": "^2.24.1",
+        "redis": "^3.1.2"
+    }
+}

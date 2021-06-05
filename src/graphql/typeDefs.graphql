@@ -1,0 +1,24 @@
+type Error {
+    field: String!
+    error: String!
+}
+
+type User {
+    id: ID!
+    username: String!
+    name: String!
+}
+
+type UserResponse {
+    user: User
+    error: String
+}
+
+type Query {
+    me: UserResponse!
+}
+
+type Mutation {
+    login(username: String!, password: String!): UserResponse!
+    register(name: String!, username: String!, password: String!): UserResponse!
+}
