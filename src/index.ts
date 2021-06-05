@@ -9,14 +9,6 @@ import { contextBuilder } from './helpers/contextBuilder';
 
 console.log(process.env.DATABASE_URL);
 async function main() {
-    console.log('start');
-    async function wait(t: number) {
-        return new Promise((res) => setTimeout(res, t));
-    }
-
-    await wait(10000);
-    console.log('end');
-
     const typeDefs = path.join(__dirname, 'graphql/typeDefs.graphql');
     const resolvers: ResolversI = Resolvers;
 
